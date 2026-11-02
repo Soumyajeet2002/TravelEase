@@ -295,6 +295,22 @@ export default function DashboardScreen() {
           {loading && <ActivityIndicator color={theme.colors.textSecondary} />}
         </View>
 
+        <SectionTitle title="Quick actions" />
+
+        <QuickAction
+          symbol="+"
+          title="Add a trip"
+          subtitle="Flight, train or bus"
+          onPress={() => router.push("/trips/add")}
+        />
+
+        <QuickAction
+          symbol="₹"
+          title="Add an expense"
+          subtitle="Meals, stays and more"
+          onPress={() => showComingSoon("Add an expense")}
+        />
+
         <View style={styles.statsRow}>
           <StatCard symbol="✈" label="Flights" value={counts.flights} />
           <StatCard symbol="▤" label="Trains" value={counts.trains} />
@@ -470,22 +486,6 @@ export default function DashboardScreen() {
             </Pressable>
           ))
         )}
-
-        <SectionTitle title="Quick actions" />
-
-        <QuickAction
-          symbol="+"
-          title="Add a trip"
-          subtitle="Flight, train or bus"
-          onPress={() => router.push("/trips/add")}
-        />
-
-        <QuickAction
-          symbol="₹"
-          title="Add an expense"
-          subtitle="Meals, stays and more"
-          onPress={() => showComingSoon("Add an expense")}
-        />
 
         <Text style={styles.footerText}>
           YOUR JOURNEYS. YOUR DATA. STORED ON YOUR DEVICE.
